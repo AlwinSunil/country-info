@@ -1,0 +1,42 @@
+.home {
+    padding: 0px 5vw;
+}
+
+.countries {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    align-items: center;
+}
+
+.country {
+    width: 90%;
+    border-radius: 0.5rem;
+    position: relative;
+    padding-bottom: 0.4rem;
+    box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px 0px;
+    background-color: var(--elements);
+
+    &__content {
+        padding: 1rem 1.5rem;
+
+        & h3 {
+            font-weight: 700 !important;
+            padding-bottom: 0.5rem;
+        }
+
+        & P {
+            padding: 0.25rem 0px;
+        }
+
+        & span {
+            font-weight: 500;
+        }
+    }
+
+    & img {
+        width: 100%;
+        border-radius: 0.5rem 0.5rem 0px 0px;
+    }
+}

@@ -1,0 +1,23 @@
+.search {
+    padding: 1rem 0px;
+
+    & form {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__input,
+    &__go {
+        padding: 0.75rem 1rem;
+        margin: 0.2rem;
+        background-color: var(--elements);
+        border: 0px;
+        color: var(--text);
+        box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px 0px;
+        border-radius: 0.4rem;
+    }
+
+    &__input {
+        width: 100%;
+    }
+}

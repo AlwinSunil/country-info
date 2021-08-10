@@ -1,0 +1,64 @@
+#themeSwitcher {
+  background: var(--image) no-repeat center;
+  background-color: var(--text);
+  background-size: 75% 75%;
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem;
+  margin-left: auto;
+  border: none;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+#themeSwitcher:hover,
+#themeSwitcher:focus {
+  filter: none;
+  cursor: pointer;
+}
+
+#themeSwitcher.clicked {
+  filter: none !important;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #fafafa;
+    --elements: #ffffff;
+    --input: #858585;
+    --text: #111517;
+    --image: url("../../assets/icons/light.svg");
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #202c37;
+    --elements: #2b3945;
+    --input: #858585;
+    --text: #111517;
+    --image: url("../../assets/icons/dark.svg");
+  }
+}
+
+body.light {
+  --background: #fafafa;
+  --elements: #ffffff;
+  --input: #858585;
+  --text: #111517;
+  --image: url("../../assets/icons/light.svg");
+}
+
+body.dark {
+  --background: #202c37;
+  --elements: #2b3945;
+  --input: #858585;
+  --text: #ffffff;
+  --image: url("../../assets/icons/dark.svg");
+}
+
+@media screen and (max-width:700px) {
+  #themeSwitcher {
+    margin: 0.5rem;
+  }
+}
