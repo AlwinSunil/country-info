@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Backarrow from "../../assets/icons/arrow.svg";
 import axios from "../../axios";
 import "./CountryInfo.scss";
 
@@ -23,11 +24,12 @@ function CountryInfo() {
 
   return (
     <div className="countryinfo">
-      <Link className="backward" to="/">
-        <div>
+      <div className="backward">
+        <Link className="backward__link" to="/">
+          <img src={Backarrow} alt="" />
           <p>Back</p>
-        </div>
-      </Link>
+        </Link>
+      </div>
       {country ? (
         <>
           {country.map((data) => (
