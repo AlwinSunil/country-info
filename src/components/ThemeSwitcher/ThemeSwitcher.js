@@ -2,7 +2,6 @@ import React from "react";
 import "./ThemeSwitcher.scss";
 
 function ThemeSwitcher() {
-
   let clickedClass = "clicked";
   const body = document.body;
   const lightTheme = "light";
