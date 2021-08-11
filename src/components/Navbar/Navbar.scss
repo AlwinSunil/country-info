@@ -5,11 +5,14 @@
     padding: 0.5rem 5vw;
     box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px 0px;
 
+    a {
+        margin: auto;
+        margin-left: 0px;
+    }
+
     p {
         font-size: 1.5rem;
         font-weight: 700;
-        margin: auto;
-        margin-left: 0px;
         color: var(--text);
     }
 }

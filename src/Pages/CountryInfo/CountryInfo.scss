@@ -1,0 +1,103 @@
+.backward {
+    width: fit-content;
+    padding: 1.5rem 7vw 0px 7vw;
+    border-radius: 0.5rem;
+    position: relative;
+    display: flex;
+
+    & div {
+        padding: 0rem 0.75rem;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        background-color: var(--elements);
+        width: fit-content;
+        border-radius: 0.25rem;
+
+        & p {
+            font-weight: 500;
+        }
+    }
+}
+
+.info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 7vw;
+
+    &__img {
+        & img {
+            width: 100%;
+            box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px 0px;
+        }
+    }
+
+    &__container {
+        padding: 1.5rem 0.5rem;
+
+        & h2 {
+            font-weight: 700;
+        }
+
+        & span {
+            font-weight: 500;
+        }
+    }
+
+    &__langs {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__borders {
+        display: flex;
+        flex-direction: column;
+
+        & p {
+            font-weight: 500;
+        }
+
+        &-con {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__border {
+        padding: 0.4rem 0.5rem;
+        margin: 0.4rem;
+        border-radius: 0.2rem;
+        background-color: var(--elements);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+
+    &__lang {
+        font-weight: 500;
+        margin: 0.25rem;
+    }
+}
+
+.lang__name {
+    padding: 0.5rem 0.5rem 0.4rem 0.5rem;
+    margin: 0.25rem;
+    border-radius: 0.2rem;
+    background-color: var(--elements);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.data {
+    padding: 0.75rem 0px;
+
+    & span {
+        font-weight: 500;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .info {
+        &__container {
+            padding: 1.5rem 0.25rem;
+        }
+    }
+}

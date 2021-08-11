@@ -21,3 +21,14 @@
         width: 100%;
     }
 }
+
+
+@media screen and (min-width: 700px) {
+    .search {
+        padding: 1rem 0px;
+
+        &__input {
+            width: 35rem;
+        }
+    }
+}

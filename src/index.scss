@@ -8,6 +8,15 @@ body {
   background-color: var(--background);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+#root {
+  width: 100%;
+  overflow: hidden;
+}
+
 *,
 *::after,
 *::before {
@@ -25,7 +34,6 @@ body {
 *:focus {
   outline: 0px;
 }
-
 
 h1,
 h2,
