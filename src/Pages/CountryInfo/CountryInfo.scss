@@ -1,14 +1,15 @@
 .backward {
     background-color: var(--elements);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: rgba(99, 99, 99, 0.05) 0px 1px 4px 0px;
+    border: 1px solid var(--border);
     margin: 1.75rem 7vw 0rem 7vw;
     width: fit-content;
-    padding: 0.1rem 2rem;
     border-radius: 0.25rem;
 
     &__link {
         width: fit-content;
         display: flex;
+        padding: 0.1rem 2rem;
         flex-direction: row;
     }
 
@@ -28,7 +29,8 @@
     &__img {
         & img {
             width: 100%;
-            box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px 0px;
+            box-shadow: rgba(99, 99, 99, 0.05) 0px 1px 4px 0px;
+            border: 1px solid var(--border);
             border-radius: 0.25rem;
         }
     }
@@ -89,7 +91,9 @@
         margin: 0.4rem;
         border-radius: 0.2rem;
         background-color: var(--elements);
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        box-shadow: rgba(0, 0, 0, 0.025) 0px 1px 4px;
+        border: 1px solid var(--border);
+
     }
 }
 
@@ -98,7 +102,8 @@
     margin: 0.25rem;
     border-radius: 0.2rem;
     background-color: var(--elements);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.025) 0px 1px 4px;
+    border: 1px solid var(--border);
 }
 
 .data {

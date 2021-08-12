@@ -23,7 +23,8 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --background: #fafafa;
+    --background: #f5f5f5;
+    --border: #eeeeee;
     --elements: #ffffff;
     --input: #858585;
     --text: #111517;
@@ -42,7 +43,8 @@
 }
 
 body.light {
-  --background: #fafafa;
+  --background: #f5f5f5;
+  --border: #eeeeee;
   --elements: #ffffff;
   --input: #858585;
   --text: #111517;
@@ -51,7 +53,7 @@ body.light {
 
 body.dark {
   --background: #202c37;
-  --elements: #2b3945;
+  --elements: #38444e;
   --input: #858585;
   --text: #ffffff;
   --image: url("../../assets/icons/dark.svg");

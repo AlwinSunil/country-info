@@ -13,7 +13,8 @@
         background-color: var(--elements);
         border: 0px;
         color: var(--text);
-        box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px 0px;
+        box-shadow: rgba(99, 99, 99, 0.05) 0px 1px 4px 0px;
+        border: 1px solid var(--border);
         border-radius: 0.4rem;
     }
 
