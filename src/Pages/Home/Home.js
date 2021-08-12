@@ -17,6 +17,8 @@ function Home() {
   return (
     <div className="home">
       <SearchBar />
+      <div className="region__filter">
+      </div>
       <div className="countries">
         {countries ? (
           <>

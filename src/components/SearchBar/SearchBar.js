@@ -12,7 +12,7 @@ function SearchBar() {
           id=""
           placeholder="Search for a Country"
         />
-        <input className="search__go" type="button" value="Search" />
+        <input className="search__go btn" type="button" value="Search" />
       </form>
     </div>
   );

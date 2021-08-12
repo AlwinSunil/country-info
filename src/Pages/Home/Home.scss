@@ -21,11 +21,11 @@
 
     &__link {
         width: 90%;
-
     }
 
     &:hover {
         transform: scale(1.025);
+        opacity: 0.8;
         cursor: pointer;
     }
 

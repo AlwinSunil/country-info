@@ -3,3 +3,12 @@
   overflow-x: hidden;
   background-color: var(--background);
 }
+
+.btn {
+  transition: transform 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    opacity: 0.75;
+  }
+}

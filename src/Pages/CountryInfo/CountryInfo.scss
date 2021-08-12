@@ -12,9 +12,10 @@
         flex-direction: row;
     }
 
-    & img {
-        width: 1.5rem;
-        padding-right: 0.25rem;
+    & svg {
+        width: 1.75rem;
+        padding-right: 0.5rem;
+        fill: var(--text);
     }
 }
 
@@ -28,6 +29,7 @@
         & img {
             width: 100%;
             box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px 0px;
+            border-radius: 0.25rem;
         }
     }
 
@@ -49,6 +51,11 @@
         flex-wrap: wrap;
     }
 
+    &__lang {
+        font-weight: 500;
+        margin: 0.25rem;
+    }
+
     &__borders {
         display: flex;
         flex-direction: column;
@@ -64,17 +71,25 @@
         }
     }
 
+    &__currs {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__curr {
+        font-weight: 500;
+
+        &__name {
+            padding: 0px;
+        }
+    }
+
     &__border {
         padding: 0.4rem 0.5rem;
         margin: 0.4rem;
         border-radius: 0.2rem;
         background-color: var(--elements);
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    }
-
-    &__lang {
-        font-weight: 500;
-        margin: 0.25rem;
     }
 }
 
@@ -94,10 +109,77 @@
     }
 }
 
+input[type="search"].dark {
+    background: var(--text);
+    color: var(--elements);
+}
+
+input[type="search"].light {
+    color: var(--elements);
+    color: var(--text);
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 1.25rem;
+    width: 1.25rem;
+    border-radius: 50em;
+    margin-right: -0.1rem;
+    background: url('../../assets/icons/cross.svg') no-repeat 75% 75%;
+    background-size: contain;
+    opacity: 0;
+    pointer-events: none;
+}
+
+input[type="search"]:focus::-webkit-search-cancel-button {
+    opacity: .3;
+    pointer-events: all;
+}
+
+input[type="search"].dark::-webkit-search-cancel-button {
+    filter: invert(1);
+}
+
 @media screen and (max-width:700px) {
     .info {
         &__container {
             padding: 1.5rem 0.25rem;
+        }
+    }
+}
+
+@media screen and (min-width:700px) {
+    .info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex: 1 1;
+
+        &__img {
+            width: 40%;
+        }
+
+        &__container {
+            width: 50%;
+            margin-left: auto;
+            padding: 0px;
+
+            & h2 {
+                padding: 0.5rem 0px 0px 0px;
+            }
+        }
+
+        &__borders {
+            padding-top: 0.5rem;
+        }
+    }
+
+    .data {
+        &__holder {
+            padding-top: 0.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1rem;
         }
     }
 }
