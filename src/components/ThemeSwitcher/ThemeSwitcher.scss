@@ -1,7 +1,7 @@
 #themeSwitcher {
   background: var(--image) no-repeat center;
   background-color: var(--text);
-  background-size: 75% 75%;
+  background-size: 75% 70%;
   width: 2rem;
   height: 2rem;
   margin: 0.5rem;
@@ -25,6 +25,7 @@
   :root {
     --background: #f5f5f5;
     --border: #eeeeee;
+    --border-line: #eeeeee;
     --elements: #ffffff;
     --input: #858585;
     --text: #111517;
@@ -36,6 +37,7 @@
   :root {
     --background: #202c37;
     --elements: #2b3945;
+    --border-line: rgb(34, 43, 43);
     --input: #858585;
     --text: #111517;
     --image: url("../../assets/icons/dark.svg");
@@ -45,6 +47,7 @@
 body.light {
   --background: #f5f5f5;
   --border: #eeeeee;
+  --border-line: #eeeeee;
   --elements: #ffffff;
   --input: #858585;
   --text: #111517;
@@ -54,6 +57,7 @@ body.light {
 body.dark {
   --background: #202c37;
   --elements: #38444e;
+  --border-line: rgb(34, 43, 43);
   --input: #858585;
   --text: #ffffff;
   --image: url("../../assets/icons/dark.svg");
