@@ -9,16 +9,16 @@ import "./App.scss";
 function App() {
   return (
     <div className="app">
-        <Navbar />
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/:id" exact>
-            <CountryInfo />
-          </Route>
-        </Switch>
-        <Footer />
+      <Navbar />
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/:id" exact>
+          <CountryInfo />
+        </Route>
+      </Switch>
+      <Footer />
     </div>
   );
 }

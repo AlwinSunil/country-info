@@ -1,7 +1,4 @@
 import React from "react";
-import { ReactComponent as InstagramLogo } from "../../assets/icons/instagram.svg";
-import { ReactComponent as TwitterLogo } from "../../assets/icons/twitter.svg";
-import { ReactComponent as GithubLogo } from "../../assets/icons/github.svg";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
