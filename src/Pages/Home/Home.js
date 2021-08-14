@@ -11,19 +11,23 @@ function Home() {
   const [countries, setCountries] = useState();
   const [searchResult, setSearchResult] = useState();
   const [filter, setFilter] = useState("all");
+  const [regionFilter, setRegionFilter] = useState("None");
 
   useEffect(() => {
     axios.get(`${filter}`).then((response) => {
       setCountries(response.data);
-      console.log(response.data);
     });
+    if (filter === "all") {
+      setRegionFilter("None");
+    } else {
+      setRegionFilter(filter.slice(7));
+    }
   }, [filter]);
 
   const handleSearch = (event) => {
     event.preventDefault();
     let value = event.target.value.toLowerCase();
     let result = [];
-    console.log(value);
     result = countries.filter((data) => {
       return data.name.toLowerCase().includes(value.toLowerCase());
     });
@@ -58,7 +62,7 @@ function Home() {
           aria-haspopup="true"
           onClick={handleClick}
         >
-          Fliter by Region
+          Filter by Region
         </Button>
         <Menu
           id="fade-menu"
@@ -70,8 +74,8 @@ function Home() {
         >
           <MenuItem onClick={() => setFilter("all")}>All</MenuItem>
           <MenuItem onClick={() => setFilter("region/africa")}>Africa</MenuItem>
-          <MenuItem onClick={() => setFilter("region/america")}>
-            America
+          <MenuItem onClick={() => setFilter("region/americas")}>
+            Americas
           </MenuItem>
           <MenuItem onClick={() => setFilter("region/asia")}>Asia</MenuItem>
           <MenuItem onClick={() => setFilter("region/europe")}>Europe</MenuItem>
@@ -80,11 +84,20 @@ function Home() {
           </MenuItem>
         </Menu>
       </div>
-      <div className="region__filter"></div>
+      <div className="filter">
+        <p>
+          <span>Filter: </span>
+          {regionFilter}
+        </p>
+      </div>
       {searchResult ? (
         <div className="countries">
           {searchResult.map((results) => (
-            <Link className="country__link" to={`/${results.alpha3Code}`}>
+            <Link
+              className="country__link"
+              to={`/${results.alpha3Code}`}
+              key={results.alpha3Code}
+            >
               <div className="country" key={results.name}>
                 <div
                   className="country__img"
@@ -114,7 +127,11 @@ function Home() {
           {countries ? (
             <>
               {countries.map((data) => (
-                <Link className="country__link" to={`/${data.alpha3Code}`}>
+                <Link
+                  className="country__link"
+                  to={`/${data.alpha3Code}`}
+                  key={data.alpha3Code}
+                >
                   <div className="country" key={data.name}>
                     <div
                       className="country__img"

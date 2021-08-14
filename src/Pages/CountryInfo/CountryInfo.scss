@@ -11,6 +11,10 @@
         display: flex;
         padding: 0.1rem 2rem;
         flex-direction: row;
+
+        & p {
+            font-weight: 700;
+        }
     }
 
     & svg {
@@ -24,7 +28,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 2rem 7vw;
+    padding: 0rem 7vw;
+    height: 28rem;
 
     &__img {
         & img {
@@ -147,6 +152,9 @@ input[type="search"].dark::-webkit-search-cancel-button {
 
 @media screen and (max-width:700px) {
     .info {
+        padding: 2rem 7vw;
+        height: fit-content;
+
         &__container {
             padding: 1.5rem 0.25rem;
         }
@@ -186,5 +194,25 @@ input[type="search"].dark::-webkit-search-cancel-button {
             grid-template-columns: 1fr 1fr;
             grid-gap: 1rem;
         }
+    }
+}
+
+@media screen and (max-width:700px) {
+    .data {
+        & span {
+            font-weight: 700;
+        }
+    }
+
+    .info__lang {
+        font-weight: 700;
+    }
+
+    .info__curr {
+        font-weight: 700;
+    }
+
+    .info__borders p {
+        font-weight: 700;
     }
 }

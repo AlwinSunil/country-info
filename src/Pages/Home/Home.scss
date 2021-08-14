@@ -84,6 +84,19 @@
     }
 }
 
+.filter {
+    & p {
+        margin: 0px 0.75rem;
+        padding: 0px;
+        padding-bottom: 0.25rem;
+        text-transform: capitalize;
+    }
+
+    & span {
+        font-weight: 600 !important;
+    }
+}
+
 .MuiButton-root {
     margin: auto 0px auto auto !important;
     background-color: var(--elements) !important;

@@ -1,0 +1,56 @@
+.footer {
+    padding: 1rem 7vw 1rem 7vw;
+    border-top: 1px solid #eee;
+    background-color: var(--elements);
+    display: flex;
+    flex-direction: row;
+
+    &__end {
+        margin: auto 0px;
+    }
+
+    &__social {
+        margin: auto 0px;
+        margin-left: auto;
+    }
+
+    &__link {
+        font-weight: 700;
+    }
+}
+
+.MuiSvgIcon-root {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+    margin: 0px 0.5rem;
+}
+
+.social {
+    &__github {
+        padding: 0.15rem;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .footer {
+        padding: 2rem 7vw 2rem 7vw;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        &__info {
+            padding: 0.5rem 0px 0.9rem 0px;
+            font-size: 1.1rem;
+        }
+
+        &__social {
+            margin: 0px auto;
+        }
+    }
+
+    .MuiSvgIcon-root {
+        width: 2rem !important;
+        height: 2rem !important;
+        margin: 0px 0.5rem;
+    }
+}

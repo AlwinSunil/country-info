@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import CountryInfo from "./Pages/CountryInfo/CountryInfo";
+import Footer from "./components/Footer/Footer";
 import "./App.scss";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <CountryInfo />
           </Route>
         </Switch>
+        <Footer />
     </div>
   );
 }
