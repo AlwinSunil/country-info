@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import AnimContainer from "../../components/AnimContainer/AnimContainer";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -8,6 +9,7 @@ import axios from "../../axios";
 import "./Home.scss";
 
 function Home() {
+  const [loader, setLoader] = useState(true);
   const [countries, setCountries] = useState();
   const [searchResult, setSearchResult] = useState();
   const [filter, setFilter] = useState("all");
@@ -16,6 +18,7 @@ function Home() {
   useEffect(() => {
     axios.get(`${filter}`).then((response) => {
       setCountries(response.data);
+      setLoader(null);
     });
     if (filter === "all") {
       setRegionFilter("None");
@@ -90,74 +93,82 @@ function Home() {
           {regionFilter}
         </p>
       </div>
-      {searchResult ? (
-        <div className="countries">
-          {searchResult.map((results) => (
-            <Link
-              className="country__link"
-              to={`/${results.alpha3Code}`}
-              key={results.alpha3Code}
-            >
-              <div className="country" key={results.name}>
-                <div
-                  className="country__img"
-                  style={{ backgroundImage: `url(${results.flag})` }}
-                ></div>
-                <div className="country__content">
-                  <h3>{results.name}</h3>
-                  <p>
-                    <span>Population: </span>
-                    {results.population}
-                  </p>
-                  <p>
-                    <span>Region: </span>
-                    {results.region}
-                  </p>
-                  <p>
-                    <span>Capital: </span>
-                    {results.capital}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
+      {loader ? (
+        <div className="loader">
+          <AnimContainer />
         </div>
       ) : (
-        <div className="countries">
-          {countries ? (
-            <>
-              {countries.map((data) => (
+        <>
+          {searchResult ? (
+            <div className="countries">
+              {searchResult.map((results) => (
                 <Link
                   className="country__link"
-                  to={`/${data.alpha3Code}`}
-                  key={data.alpha3Code}
+                  to={`/${results.alpha3Code}`}
+                  key={results.alpha3Code}
                 >
-                  <div className="country" key={data.name}>
+                  <div className="country" key={results.name}>
                     <div
                       className="country__img"
-                      style={{ backgroundImage: `url(${data.flag})` }}
+                      style={{ backgroundImage: `url(${results.flag})` }}
                     ></div>
                     <div className="country__content">
-                      <h3>{data.name}</h3>
+                      <h3>{results.name}</h3>
                       <p>
                         <span>Population: </span>
-                        {data.population}
+                        {results.population}
                       </p>
                       <p>
                         <span>Region: </span>
-                        {data.region}
+                        {results.region}
                       </p>
                       <p>
                         <span>Capital: </span>
-                        {data.capital}
+                        {results.capital}
                       </p>
                     </div>
                   </div>
                 </Link>
               ))}
-            </>
-          ) : null}
-        </div>
+            </div>
+          ) : (
+            <div className="countries">
+              {countries ? (
+                <>
+                  {countries.map((data) => (
+                    <Link
+                      className="country__link"
+                      to={`/${data.alpha3Code}`}
+                      key={data.alpha3Code}
+                    >
+                      <div className="country" key={data.name}>
+                        <div
+                          className="country__img"
+                          style={{ backgroundImage: `url(${data.flag})` }}
+                        ></div>
+                        <div className="country__content">
+                          <h3>{data.name}</h3>
+                          <p>
+                            <span>Population: </span>
+                            {data.population}
+                          </p>
+                          <p>
+                            <span>Region: </span>
+                            {data.region}
+                          </p>
+                          <p>
+                            <span>Capital: </span>
+                            {data.capital}
+                          </p>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </>
+              ) : null}
+            </div>
+          )}
+        </>
       )}
     </div>
   );

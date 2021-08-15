@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { ReactComponent as Backarrow } from "../../assets/icons/arrow.svg";
 import axios from "../../axios";
+import AnimContainer from "../../components/AnimContainer/AnimContainer";
 import "./CountryInfo.scss";
 
 function CountryInfo() {
@@ -19,7 +20,6 @@ function CountryInfo() {
       setLang(response.data.languages);
       setBorder(response.data.borders);
       setCurrency(response.data.currencies);
-      console.log(response.data);
     });
     window.scrollTo(0, 0);
   }, [slug]);
@@ -107,7 +107,11 @@ function CountryInfo() {
             </div>
           ))}
         </>
-      ) : null}
+      ) : (
+        <div className="loader country__loader">
+          <AnimContainer />
+        </div>
+      )}
     </div>
   );
 }
