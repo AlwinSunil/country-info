@@ -1,28 +1,11 @@
-import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import { ReactComponent as Backarrow } from "../../assets/icons/arrow.svg";
-import axios from "../../axios";
 import AnimContainer from "../../components/AnimContainer/AnimContainer";
+import CountryInfoLogic from "./CountryInfoLogic";
 import "./CountryInfo.scss";
 
 function CountryInfo() {
-    const [country, setCountry] = useState();
-    const [lang, setLang] = useState();
-    const [border, setBorder] = useState();
-    const [currency, setCurrency] = useState();
-
-    const slug = useParams().id;
-
-    useEffect(() => {
-        axios.get(`alpha/${slug}`).then((response) => {
-            setCountry([response.data]);
-            setLang(response.data.languages);
-            setBorder(response.data.borders);
-            setCurrency(response.data.currencies);
-        });
-        window.scrollTo(0, 0);
-    }, [slug]);
+    const { country, lang, border, currency } = CountryInfoLogic();
 
     return (
         <div className="countryinfo">
