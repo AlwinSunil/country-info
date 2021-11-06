@@ -10,7 +10,6 @@ function HomeLogic() {
 
     useEffect(() => {
         axios.get(`${filter}`).then((response) => {
-            console.log(response);
             setCountries(response.data);
             setLoader(null);
         });
